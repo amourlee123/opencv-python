@@ -7,6 +7,7 @@ import cv2
 # Create a block image
 img = np.zeros((512, 512, 3), np.uint8)
 
+# add some word to test git
 # Draw a diagonal blue line with thickness of 5px
 cv2.line(img, (0, 0), (511, 511), (250, 0, 0), 5)
 # Draw a rectangle
