@@ -13,7 +13,7 @@ cnt = contours[0]
 
 hull = cv2.convexHull(cnt, returnPoints = False)
 defects = cv2.convexityDefects(cnt, hull)
-print(defects[1, 0])
+print(defects)
 
 for i in range(defects.shape[0]):
     s, e, f, d = defects[i, 0]
