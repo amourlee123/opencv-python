@@ -52,6 +52,7 @@ def make_image():
 if __name__ == '__main__':
     print(__doc__)
     img = make_image()
+    cv2.imshow('img', img)
     h, w = img.shape[:2]
     
     _, contours0, hierarchy = cv2.findContours( img.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)

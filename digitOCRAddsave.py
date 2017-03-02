@@ -33,5 +33,6 @@ ret, result, neighbours, dist = knn.findNearest(test, k = 5)
 matches = result == test_label
 correct = np.count_nonzero(matches)
 accuracy = correct * 100.0 / result.size
+np.savez('knn_data.npz', train = train, train_labels = train_label)
 
 print accuracy

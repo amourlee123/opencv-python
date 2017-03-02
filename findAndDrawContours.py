@@ -8,33 +8,33 @@ im = cv2.imread('/Users/amourlee/Desktop/rectangle.png')
 imgray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
 ret, thresh = cv2.threshold(imgray, 127, 255, 0)
-image, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+image, contours0, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-cnt = contours[0]
-M = cv2.moments(cnt)
+# cnt = contours0[0]
+# print contours0
+# M = cv2.moments(cnt)
+# area = cv2.contourArea(cnt)
+# perimeter = cv2.arcLength(cnt, True)
+# print perimeter
+# epsilon = 0.1 * perimeter
+# approx = cv2.approxPolyDP(cnt, epsilon, True)
 
-area = cv2.contourArea(cnt)
-perimeter = cv2.arcLength(cnt, True)
-epsilon = 0.1 * perimeter
+contours = [cv2.approxPolyDP(cnt, 3, True) for cnt in contours0]
 
-approx = cv2.approxPolyDP(cnt, epsilon, True)
-pts = np.array(approx, np.uint8)
+
+im = cv2.drawContours(im, contours0, -1, (127, 255, 255), 3)
+
+
 # print(approx[1])
 # print(cnt)
 # print(perimeter)
 # print(area)
 # print(M)
 # print(M['m00'])
-print imgray
-print pts
 
-
-
-cv2.namedWindow('image')
 cv2.namedWindow('approx')
 while(1):
-    cv2.imshow('image', image)
-    # cv2.imshow('approx', pts)
+    cv2.imshow('approx', im)
     k = cv2.waitKey(1)
     if k == 27:
         break
