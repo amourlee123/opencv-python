@@ -35,6 +35,8 @@ def draw_circle(event, x, y, flags, param):
     elif event == cv2.EVENT_LBUTTONUP:
         drawing == False
 
+
+
 img = np.zeros((512, 512, 3), np.uint8)
 cv2.namedWindow('image')
 cv2.createTrackbar('R', 'image', 0, 255, nothing)

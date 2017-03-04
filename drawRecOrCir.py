@@ -30,7 +30,7 @@ def draw_circle(event, x, y, flags, param):
     elif event == cv2.EVENT_LBUTTONUP:
         drawing = False
 
-
+# Create image window
 img = np.zeros((512, 512, 3), np.uint8)
 
 cv2.namedWindow('Image')
