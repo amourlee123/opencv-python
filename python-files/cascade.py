@@ -5,10 +5,10 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-face_cascade = cv2.CascadeClassifier('data/haarcascades/haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('data/haarcascades/haarcascade_eye.xml')
+face_cascade = cv2.CascadeClassifier('../data/haarcascades/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('../data/haarcascades/haarcascade_eye.xml')
 
-img = cv2.imread('/Users/amourlee/Desktop/zxc.jpeg')
+img = cv2.imread('../data/images/football.png', cv2.IMREAD_COLOR)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 faces = face_cascade.detectMultiScale(gray, 1.3, 5)

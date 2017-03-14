@@ -7,7 +7,7 @@ import numpy as np
 def nothing(x):
     pass
 
-img = cv2.imread('data/images/football.png', 0)
+img = cv2.imread('../data/images/football.png', 0)
 
 cv2.namedWindow('Canny')
 

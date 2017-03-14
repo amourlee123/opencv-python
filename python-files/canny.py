@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-img = cv2.imread('data/images/football.png', 0)
+img = cv2.imread('../data/images/football.png', 0)
 
 edges = cv2.Canny(img, 100, 200)
 
